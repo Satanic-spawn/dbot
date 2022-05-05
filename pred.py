@@ -51,9 +51,9 @@ def predd(cryptn, start_date):
     future = m.make_future_dataframe(periods = 5, freq = "D")
 
     forecast = m.predict(future)
-    return forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']]
+    #return forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']]
 
-    #next_day = (datetime.today() + timedelta(days=1)).strftime('%Y-%m-%d')
-    #return forecast[forecast['ds'] == next_day]['yhat'].item()
+    next_day = (datetime.today() + timedelta(days=1)).strftime('%Y-%m-%d')
+    return str(forecast[forecast['ds'] == next_day]['yhat'].item())
 
 #print(predd("RVN-INR", "2016-01-01"))

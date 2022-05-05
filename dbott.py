@@ -6,7 +6,7 @@ import pred
 import pred2
 
 client = discord.Client()
-TOKEN = 'NzAzNTg4NzM1MjQ1MjIxOTM5.XqQyEg.YsjygcuyNn1FVp-WdSysHRArp88'
+TOKEN = 'NzAzNTg4NzM1MjQ1MjIxOTM5.XqQyEg.XE1WBYy1IGsV71qVcJeMC4A4wks'
 lish = 'BTTC','ETH'
 
 
@@ -40,7 +40,15 @@ async def on_message(message):
         nml = nm.split(" ")
         name = nml[0]+"-INR"
         prc = str(pred2.predd2(nml[0], "INR"))
-        await message.channel.send("Model accuracy graph for "+nml[0]+": ")
+        #await message.channel.send("Model accuracy graph for "+nml[0]+": ")
+        await message.channel.send(prc)
+
+    if message.content.startswith('$predprice1 '):
+        nm = message.content.replace("$predprice1 ","")
+        nml = nm.split(" ")
+        name = nml[0]+"-INR"
+        prc = pred.predd(name,"2016-01-01")
+        #await message.channel.send("Model accuracy graph for "+nml[0]+": ")
         await message.channel.send(prc)
 
 

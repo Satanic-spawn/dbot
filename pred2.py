@@ -88,14 +88,15 @@ def predd2(crp, cur):
 
     plt.plot(act_prices, color = 'black', label = 'Actual prices')
     plt.plot(pred_prices, color = 'green', label = 'Pred prices')
-    plt.title(f'adfssadf')
+    plt.title(crp)
     plt.xlabel('Time')
     plt.ylabel('Price')
     plt.legend(loc = 'upper left')
-    plt.show()
-    input1 = input()
-    if input1 == "y":
-        model.save('dbot/moddel')
+    return str(pred_prices[-1])
+    #plt.show()
+    #input1 = input()
+    #if input1 == "y":
+        #model.save('dbot/moddel')
 
 
 
